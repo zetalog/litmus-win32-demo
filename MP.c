@@ -208,7 +208,6 @@ static void *P0(void *_vb) {
   int _stride = _a->_p->stride;
   for (int _j = _stride ; _j > 0 ; _j--) {
     for (int _i = _size_of_test-_j ; _i >= 0 ; _i -= _stride) {
-      printf("0:%d\n", _i);
       barrier_wait(_th_id,_i,&barrier[_i]);
 #if 1
       _a->x[_i] = 1;
@@ -248,7 +247,6 @@ static void *P1(void *_vb) {
   int *out_1_x7 = _a->out_1_x7;
   for (int _j = _stride ; _j > 0 ; _j--) {
     for (int _i = _size_of_test-_j ; _i >= 0 ; _i -= _stride) {
-      printf("1:%d\n", _i);
       barrier_wait(_th_id,_i,&barrier[_i]);
 #if 1
       out_1_x5[_i] = _a->y[_i];

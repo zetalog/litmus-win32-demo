@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\ported">
-      <UniqueIdentifier>{c274ecfc-8858-44ce-a186-ebbf785ce8be}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="affinity.c">
@@ -27,17 +24,17 @@
     <ClCompile Include="utils.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="outs.c">
-      <Filter>Source Files\ported</Filter>
+    <ClCompile Include="daytime.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="litmus_rand.c">
-      <Filter>Source Files\ported</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="outs.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="run.c">
-      <Filter>Source Files\ported</Filter>
-    </ClCompile>
-    <ClCompile Include="daytime.c">
-      <Filter>Source Files\ported</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

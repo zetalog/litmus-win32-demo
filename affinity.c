@@ -16,9 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sched.h>
-#ifdef WIN32
-#include <sched.h>
-#else
+#if !defined(WIN32) && !defined(WIN64)
 #include <unistd.h>
 #endif
 #ifdef _FREEBSD_AFFINITY

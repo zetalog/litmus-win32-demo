@@ -36,7 +36,7 @@ void errexit(char *msg,int e) ;
 
 void *malloc_check(size_t sz) ;
 
-#ifndef WIN32
+#if !defined(WIN32) && !defined(WIN64)
 void *mmap_exec(size_t sz) ;
 void munmap_exec(void *p,size_t sz) ;
 int max(int n,int m) ;

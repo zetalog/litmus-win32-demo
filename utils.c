@@ -21,7 +21,7 @@
 #include <errno.h>
 #include <stdint.h>
 #include <stdarg.h>
-#ifndef WIN32
+#if !defined(WIN32) && !defined(WIN64)
 #include <sys/mman.h>
 #endif
 #include "utils.h"
@@ -74,7 +74,7 @@ void *malloc_check(size_t sz) {
   return p ;
 }
 
-#ifndef WIN32
+#if !defined(WIN32) && !defined(WIN64)
 void *mmap_exec(size_t sz) {
   void * p = mmap(NULL, sz, PROT_READ|PROT_EXEC|PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0);
   if (p == MAP_FAILED) {
@@ -1318,7 +1318,7 @@ int check_shuffle(int **t, int *min, int sz) {
 /* Time counter */
 /****************/
 
-#ifdef WIN32
+#if defined(WIN32) || defined(WIN64)
 #include <winsock2.h>
 
 int gettimeofday(struct timeval* tp, struct timezone* tz);

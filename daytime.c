@@ -2,10 +2,7 @@
 #include <time.h>
 #include <sys/timeb.h>
 #include <sys/stat.h>
-#ifdef WIN32
 #include <winsock2.h>
-#endif
-
 #include <stdio.h>
 
 #undef timezone

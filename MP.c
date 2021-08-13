@@ -23,7 +23,7 @@
 #include <assert.h>
 #include <time.h>
 #include <limits.h>
-#ifndef WIN32
+#if !defined(WIN32) && !defined(WIN64)
 #include <unistd.h>
 #endif
 #include "utils.h"
@@ -45,10 +45,9 @@ typedef struct {
 /* Full memory barrier */
 
 inline static void mbar(void) {
-#if 1
-  __asm {
-    mfence
-  }
+#if defined(WIN32)
+  __asm mfence
+#elif defined(WIN64)
 #else
   asm __volatile__ ("fence rw,rw" ::: "memory");
 #endif
